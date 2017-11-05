@@ -72,7 +72,7 @@ class DCGAN_G(nn.Module):
         main.add_module('initial.{0}.relu'.format(cngf),
                         nn.ReLU(True))
 
-        csize, cndf = 4, cngf
+        csize, cngf = 4, cngf
         while csize < isize//2:
             main.add_module('pyramid.{0}-{1}.convt'.format(cngf, cngf//2),
                             nn.ConvTranspose2d(cngf, cngf//2, 4, 2, 1, bias=False))
@@ -169,7 +169,7 @@ class DCGAN_G_nobn(nn.Module):
         main.add_module('initial.{0}.relu'.format(cngf),
                         nn.ReLU(True))
 
-        csize, cndf = 4, cngf
+        csize, cngf = 4, cngf
         while csize < isize//2:
             main.add_module('pyramid.{0}-{1}.convt'.format(cngf, cngf//2),
                             nn.ConvTranspose2d(cngf, cngf//2, 4, 2, 1, bias=False))
